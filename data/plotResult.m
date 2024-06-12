@@ -5,7 +5,7 @@ close all;
 
 % 1)real(u), 2)imag(u), 3)real(v), 4)imag(v), 5)real(w), 6)imag(w)
 fieldNum = 6;
-polar_couple = [1 1];
+polar_couple = [2 2];
 
 data = load("u_comsol.txt");
 data = data(1:4:end, :);

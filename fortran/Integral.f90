@@ -9,12 +9,14 @@ contains
     !Нахождение u-компоненты интеграла K*Q
     SUBROUTINE u_integrand(alfa, s, n)
     implicit none;
+    real*8 cylinderR
     integer n, i, j
     complex*16 alfa, s(n), sigma(2), P, Bessel(1) 
         sigma = makeSigma(alfa)
         do i=1, n
             P = MakeP(alfa, z(i))
-            call S17DEF(1d0,alfa*R(i),1,'U',Bessel,ibess,jbess)
+            cylinderR = sqrt(x(i)**2+y(i)**2)
+            call S17DEF(1d0,alfa*cylinderR,1,'U',Bessel,ibess,jbess)
             s(i) = alfa**2*P*Bessel(1)*cos(phi(i))
             s(i) = s(i)/(2d0*pi)
         enddo
@@ -25,11 +27,13 @@ contains
     SUBROUTINE v_integrand(alfa, s, n)
     implicit none;
     integer n, i
+    real*8 cylinderR
     complex*16 alfa, s(n), sigma(2), P, Bessel(1) 
         sigma = makeSigma(alfa)
         do i=1, n
             P = MakeP(alfa, z(i))
-            call S17DEF(1d0,alfa*R(i),1,'U',Bessel,ibess,jbess)
+            cylinderR = sqrt(x(i)**2+y(i)**2)
+            call S17DEF(1d0,alfa*cylinderR,1,'U',Bessel,ibess,jbess)
             s(i) = -alfa**2*P*Bessel(1)*sin(phi(i))
             s(i) = s(i)/(2d0*pi)
         enddo
@@ -40,11 +44,13 @@ contains
     SUBROUTINE w_integrand(alfa, s, n)
     implicit none;
     integer n, i
+    real*8 cylinderR
     complex*16 alfa, s(n), sigma(2), RR, Bessel(1) 
         sigma = makeSigma(alfa)
         do i=1, n
             RR = MakeR(alfa, z(i))
-            call S17DEF(0d0,alfa*R(i),1,'U',Bessel,ibess,jbess)
+            cylinderR = sqrt(x(i)**2+y(i)**2)
+            call S17DEF(0d0,alfa*cylinderR,1,'U',Bessel,ibess,jbess)
             s(i) = -RR*Bessel(1)*alfa
             s(i) = s(i)/(2d0*pi)
         enddo

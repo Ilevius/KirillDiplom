@@ -31,7 +31,7 @@ character (len=10) :: mode
         
 ! Points at arc
         psimin = pi/2d0;  psimax = pi
-        RSngl = 0.5d0; ! в длинах p волн!!! 
+        RSngl = 15d0; ! в длинах p волн!!! 
         phiSngl = 0d0;
         
 ! Frequency        
