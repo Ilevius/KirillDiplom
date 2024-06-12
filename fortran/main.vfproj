@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioProject ProjectCreator="Intel Fortran" Keyword="Console Application" Version="11.0" ProjectIdGuid="{9ABEDC6B-B076-4BF2-944A-FC51C4F91246}">
+	<Platforms>
+		<Platform Name="Win32"/></Platforms>
+	<Configurations>
+		<Configuration Name="Debug|Win32">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" WarnInterfaces="true" Traceback="true" BoundsCheck="true" StackFrameCheck="true" RuntimeLibrary="rtMultiThreadedDebugDLL"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" GenerateDebugInformation="true" SubSystem="subSystemConsole"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Release|Win32">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" SubSystem="subSystemConsole"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="32|Win32">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" RuntimeLibrary="rtMultiThreadedDLL"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" SubSystem="subSystemConsole"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration></Configurations>
+	<Files>
+		<Filter Name="Header Files" Filter="fi;fd"/>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"/>
+		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
+		<Filter Name="a">
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\p01abft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\p01abzt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s01eaft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s14abft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17deft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dert.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dest.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dett.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17deut.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17devt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dewt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dext.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17deyt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dezt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgrt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgst.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgtt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgut.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgvt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgwt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgxt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgyt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dgzt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dlft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dlyt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s17dlzt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s18dcyt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\s18dczt.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02ahft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02ajft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02alft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02amft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02anft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02bbft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02bhft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02bjft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02bkft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02blft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x04aaft.f"/>
+		<File RelativePath=".\S17DEF (B) S17DLF (H)\x04baft.f"/></Filter>
+		<File RelativePath=".\Kmatrix.f90"/>
+		<File RelativePath=".\Cdinn5.f90"/>
+		<File RelativePath=".\Csimpn5.f90"/>
+		<File RelativePath=".\residue.f90"/>
+		<File RelativePath=".\Dinn5.f90"/>
+		<File RelativePath=".\globals.f90"/>
+		<File RelativePath=".\Hamin.f90"/>
+		<File RelativePath=".\Integral.f90"/>
+		<File RelativePath=".\main.f90"/>
+		<File RelativePath=".\stPhase.f90"/></Filter>
+		<File RelativePath=".\ReadMe.txt"/></Files>
+	<Globals/></VisualStudioProject>
