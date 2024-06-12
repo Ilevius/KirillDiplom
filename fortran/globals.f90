@@ -23,15 +23,15 @@ character (len=10) :: mode
         
 ! Study mode  'segment' or 'arc'
         mode = 'arc';
-        pointsNumber = 100;  
+        pointsNumber = 101;  
         
 ! Points at line segment       
-        xmin = 0.5d0; xmax = 15d0
-        zSngl = 0d0; ySngl = 0d0;
+        xmin = 0.5d0; xmax = 2d0 !  в длинах р волн
+        zSngl = -0.01d0; ySngl = 0d0;
         
 ! Points at arc
         psimin = pi/2d0;  psimax = pi
-        RSngl = 10d0; ! в длинах p волн!!! 
+        RSngl = 0.5d0; ! в длинах p волн!!! 
         phiSngl = 0d0;
         
 ! Frequency        
@@ -61,22 +61,29 @@ character (len=10) :: mode
         allocate(x(pointsNumber), y(pointsNumber), z(pointsNumber), R(pointsNumber), phi(pointsNumber), psi(pointsNumber),&
             u(pointsNumber), v(pointsNumber), w(pointsNumber), u_asym(pointsNumber), v_asym(pointsNumber), w_asym(pointsNumber), &
             u_res(pointsNumber), v_res(pointsNumber), w_res(pointsNumber))
-                
+        
+        
+        open(1, file="C:\Users\tiama\OneDrive\–абочий стол\IMMI\!!  ирилл диплом 2024\COMSOL\points.txt")
+        write(1,'(A)') "% x, y, z"
 
         if (mode == 'segment') then
             xStep = (xMax-xMin)/pointsNumber;
             do i = 1, pointsNumber
                 x(i) = xmin+xstep*(i-1); y(i) = ySngl; z(i) = zSngl;
-                R(i) = sqrt(x(i)**2+y(i)**2); phi(i) = 0d0; psi(i) = 0d0;
+                R(i) = sqrt(x(i)**2+y(i)**2); phi(i) = 0d0; psi(i) = 0d0; ! здесь не учитываютс€ значени€ x, y !!!
+                
+                write(1, '(7(2E15.6E3))') , x(i), y(i), z(i)
             enddo
         else if (mode == 'arc') then
             psiStep = (psiMax-psiMin)/pointsNumber;
             do i = 1, pointsNumber
                 psi(i) = psiMin+psiStep*(i-1); phi(i) = 0d0; R(i) = RSngl;
                 x(i) = RSngl*sin(psi(i))*cos(phi(i)); y(i) = RSngl*sin(psi(i))*sin(phi(i)); z(i) = RSngl*cos(psi(i));
+                
+                write(1, '(7(2E15.6E3))') , x(i), y(i), z(i)
             enddo
         endif
-        
+        close(1)
         
 
     end subroutine InitGlobals

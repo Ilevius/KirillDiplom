@@ -20,7 +20,7 @@ contains
     real*8 dzetaMin, dzetaMax, haminStep, haminEps, dz(10), ht 
     complex*16 alfa, Up, Um, Vp, Vm, Wp, Wm, dzp, dzm, Pp, Pm, Rp, Rm, HankelP(1), HankelM(1), HankelP0(1), HankelM0(1)
         !open(1, file='C:\Users\gpesc\Desktop\Расчеты для диплома 2024-06-08\Data\u_residue.txt', FORM='FORMATTED')
-        open(1, file='C:\Users\tiama\OneDrive\Рабочий стол\IMMI\!! Кирилл диплом 2024\Расчеты для диплома 2024-06-06\Data\u_residue.txt', FORM='FORMATTED')
+        open(1, file='C:\Users\tiama\OneDrive\Рабочий стол\IMMI\!! Кирилл диплом 2024\data\u_residue.txt', FORM='FORMATTED')
         dzetaMin = 1d-5
         dzetaMax = 2d0*kappa(2)  
         haminStep = 1d-4

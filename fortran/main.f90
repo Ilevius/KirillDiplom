@@ -19,7 +19,7 @@ implicit none
 
     call MakeAsymps
     call PlotSphase
-    call plotUres
+    !call plotUres
     
     
 CONTAINS

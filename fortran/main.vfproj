@@ -79,15 +79,16 @@
 		<File RelativePath=".\S17DEF (B) S17DLF (H)\x02blft.f"/>
 		<File RelativePath=".\S17DEF (B) S17DLF (H)\x04aaft.f"/>
 		<File RelativePath=".\S17DEF (B) S17DLF (H)\x04baft.f"/></Filter>
-		<File RelativePath=".\Kmatrix.f90"/>
 		<File RelativePath=".\Cdinn5.f90"/>
 		<File RelativePath=".\Csimpn5.f90"/>
-		<File RelativePath=".\residue.f90"/>
 		<File RelativePath=".\Dinn5.f90"/>
 		<File RelativePath=".\globals.f90"/>
 		<File RelativePath=".\Hamin.f90"/>
 		<File RelativePath=".\Integral.f90"/>
+		<File RelativePath=".\Kmatrix.f90"/>
 		<File RelativePath=".\main.f90"/>
-		<File RelativePath=".\stPhase.f90"/></Filter>
+		<File RelativePath=".\residue.f90"/>
+		<File RelativePath=".\stPhase.f90"/>
+		<File RelativePath=".\test.f90"/></Filter>
 		<File RelativePath=".\ReadMe.txt"/></Files>
 	<Globals/></VisualStudioProject>

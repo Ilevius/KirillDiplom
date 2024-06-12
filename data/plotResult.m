@@ -5,11 +5,11 @@ close all;
 
 % 1)real(u), 2)imag(u), 3)real(v), 4)imag(v), 5)real(w), 6)imag(w)
 fieldNum = 6;
-polar_couple = [6 6];
+polar_couple = [1 1];
 
 data = load("u_comsol.txt");
 data = data(1:4:end, :);
-x_comsol = data(:,1)/6.32;
+x_comsol = data(:,1)/6.32;   % делим на 6,32 чтобы выразить x в длинах волн
 u_comsol = data(:,fieldNum+3)*1e3;
 %  1)x, 2)y, 3)z, 4)real(u), 5)imag(u), 6)real(v), 7)imag(v), 8)real(w), 9)imag(w)
 

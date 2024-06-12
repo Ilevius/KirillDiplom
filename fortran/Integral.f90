@@ -54,9 +54,9 @@ contains
     !Вывод результатов нахождения интеграла K*Q в текстовый файл
     subroutine PlotIntegral 
     implicit none
-        integer i, j
+        integer i
         !open(3, file="C:\Users\gpesc\Desktop\Расчеты для диплома 2024-06-08\Data\u_integral.txt")
-        open(3, file="C:\Users\tiama\OneDrive\Рабочий стол\IMMI\!! Кирилл диплом 2024\Расчеты для диплома 2024-06-06\Data\u_integral.txt")
+        open(3, file="C:\Users\tiama\OneDrive\Рабочий стол\IMMI\!! Кирилл диплом 2024\data\u_integral.txt")
         write(3,'(A)') "% x, y, z, R, phi, psi, real(u), imag(u), real(v), imag(v), real(w), imag(w)"
         do i = 1, pointsNumber
             write(3, '(12(2E15.6E3))') , x(i), y(i), z(i), R(i), phi(i), psi(i), real(u(i)), imag(u(i)), real(v(i)), imag(v(i)), real(w(i)), imag(w(i))
