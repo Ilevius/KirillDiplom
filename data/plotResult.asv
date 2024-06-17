@@ -60,7 +60,7 @@ ylabel('$|u|$, mm', 'Interpreter', 'LaTeX');
 grid on
 
 f_pol = figure();
-plot(alf_fortran, u_forftran_p, alf_Sphase, u_Sphase, '--');
+plot(alf_fortran, u_forftran_p, alf_Sphase, u_Sphase, '-');
 legend('интеграл','стац. фаза')
 thetalim([180 360]);
 % rlim([0 3e-5])

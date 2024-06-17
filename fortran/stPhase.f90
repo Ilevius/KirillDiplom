@@ -11,7 +11,10 @@ contains
     subroutine MakeAsymps 
     implicit none
     integer i
+    real*8 pole
     complex*16 u1, u2, v1, v2, w1, w2, alfa1, alfa2, alfa, P1, R1, K1Q1, P2, R2, K2Q2, sPtest(2)
+    
+        call findPole(pole)
         do i = 1, pointsNumber
             
             alfa1 = -kappa(1)*sin(psi(i))*cos(phi(i)); alfa2 = -kappa(1)*sin(psi(i))*sin(phi(i)); alfa = kappa(1)*sin(psi(i));
@@ -27,7 +30,7 @@ contains
             
             K1Q1 = R1;  !K1Q1 =1d0; !!!!
             w1 = ci*cos(psi(i))/(2d0*pi*R(i))*K1Q1*kappa(1)*exp(ci*R(i)*kappa(1))
-
+            
             
             alfa1 = -kappa(2)*sin(psi(i))*cos(phi(i)); alfa2 = -kappa(2)*sin(psi(i))*sin(phi(i)); alfa = kappa(2)*sin(psi(i));
             sPtest = testStPoint(psi(i), phi(i), alfa1, alfa2, alfa, 2)
@@ -39,13 +42,13 @@ contains
             
             K2Q2 = -ci*alfa2*P2; 
             v2 = ci*cos(psi(i))/(2d0*pi*R(i))*K2Q2*kappa(2)*exp(ci*R(i)*kappa(2))   
-        
+            
             K2Q2 = R2; !K2Q2 =1d0; !!!
             w2 = ci*cos(psi(i))/(2d0*pi*R(i))*K2Q2*kappa(2)*exp(ci*R(i)*kappa(2)) 
             
-            u_asym(i) = u1+u2
-            v_asym(i) = v1+v2
-            w_asym(i) = w1+w2
+            u_asym(i) = u1 + u2
+            v_asym(i) = v1 + v2
+            w_asym(i) = w1 + w2
         enddo
     end subroutine MakeAsymps
     

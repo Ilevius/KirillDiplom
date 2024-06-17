@@ -23,7 +23,7 @@ character (len=10) :: mode
         
 ! Study mode  'segment' or 'arc'
         mode = 'arc';
-        pointsNumber = 101;  
+        pointsNumber = 201;  
         
 ! Points at line segment       
         xmin = 0.5d0; xmax = 2d0 !  в длинах р волн
@@ -31,11 +31,11 @@ character (len=10) :: mode
         
 ! Points at arc
         psimin = pi/2d0;  psimax = pi
-        RSngl = 15d0; ! в длинах p волн!!! 
+        RSngl = 10d0; ! в длинах p волн!!! 
         phiSngl = 0d0;
         
 ! Frequency        
-        f = 0.2d0
+        f = 0.7d0
                
 ! Work settings        
         ibess=0
