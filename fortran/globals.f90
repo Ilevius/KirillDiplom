@@ -23,7 +23,7 @@ character (len=10) :: mode
         
 ! Study mode  'segment' or 'arc'
         mode = 'arc';
-        pointsNumber = 201;  
+        pointsNumber = 101;  
         
 ! Points at line segment       
         xmin = 0.5d0; xmax = 2d0 !  в длинах р волн
@@ -35,7 +35,7 @@ character (len=10) :: mode
         phiSngl = 0d0;
         
 ! Frequency        
-        f = 0.7d0
+        f = 0.2d0
                
 ! Work settings        
         ibess=0
@@ -44,7 +44,7 @@ character (len=10) :: mode
         tp = 0d0 
         eps = 1d-6 
         step = 1d-2 
-        IntLimit = 1d3
+        
         
 ! Preparing calculations                        
         ww = 2d0*pi*f
@@ -52,12 +52,15 @@ character (len=10) :: mode
         kappa(1) = sqrt(rho*ww**2/(lamda+2d0*mu))
         kappa(2) = sqrt(rho*ww**2/(mu))
         
+        
+        
         SwaveLen = sqrt(mu/rho); PwaveLen = sqrt((lamda+2d0*mu)/rho);
         
         Rsngl = PwaveLen*Rsngl
         xMin = xMin*PwaveLen; xMax = xMax*PwaveLen;
         
-        t1 = Kappa(1)*0.5; t2 = t1; t3 = t1; t4 = (Kappa(2)*1.4d0);
+        t1 = Kappa(1)*0.5; t2 = t1; t3 = t1; t4 = (Kappa(2)*1.4d0); IntLimit = 1d2;
+        
         allocate(x(pointsNumber), y(pointsNumber), z(pointsNumber), R(pointsNumber), phi(pointsNumber), psi(pointsNumber),&
             u(pointsNumber), v(pointsNumber), w(pointsNumber), u_asym(pointsNumber), v_asym(pointsNumber), w_asym(pointsNumber), &
             u_res(pointsNumber), v_res(pointsNumber), w_res(pointsNumber))

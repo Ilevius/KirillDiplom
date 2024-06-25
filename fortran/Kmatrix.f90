@@ -34,61 +34,50 @@ contains
         makeDelta = 2d0*mu*(-(alfa**2 - 0.5d0*kappa(2)**2)**2 + alfa**2*sigma(1)*sigma(2)) 
     END
     
+
     
-    !Нахождение переменной P1 (Для стационарной фазы)
-    FUNCTION MakeP1(alfa)
-    complex*16 alfa, MakeP1, sigma(2), delta
+    FUNCTION MakePn(alfa, n)
+    integer n
+    complex*16 alfa, MakePn, sigma(2), delta
         sigma = makeSigma(alfa)
         delta = makeDelta(alfa)
-        MakeP1 =(-(alfa**2-0.5d0*kappa(2)**2))/delta
+        if (n == 1) then
+            MakePn =(-(alfa**2-0.5d0*kappa(2)**2))/delta
+        else
+            MakePn = sigma(1)*sigma(2)/delta  
+        endif    
     END  
     
-    
-    !Нахождение переменной P2 (Для стационарной фазы)
-    FUNCTION MakeP2(alfa)
-    complex*16 alfa, MakeP2, sigma(2), delta
-        sigma = makeSigma(alfa)
-        delta = makeDelta(alfa)
-        MakeP2 = sigma(1)*sigma(2)/delta
-    END 
-    
-    
-    !Нахождение переменной R1 (Для стационарной фазы)
-    FUNCTION MakeR1(alfa)
-    complex*16 alfa, MakeR1, sigma(2), delta
+    FUNCTION MakeRn(alfa, n)
+    integer n
+    complex*16 alfa, MakeRn, sigma(2), delta
         sigma = makeSigma(alfa); 
         delta = makeDelta(alfa);
-        MakeR1 = (-(alfa**2-0.5d0*kappa(2)**2))/delta*sigma(1)
+        if (n == 1) then
+            MakeRn = (-(alfa**2-0.5d0*kappa(2)**2))/delta*sigma(1)
+        else
+            MakeRn = sigma(1)*alfa**2/delta
+        endif
     END
     
     
-    !Нахождение переменной R1 (Для стационарной фазы)
-    FUNCTION MakeR2(alfa)
-    complex*16 alfa, MakeR2, sigma(2), P2, delta
-        sigma = makeSigma(alfa); 
-        delta = makeDelta(alfa);
-        MakeR2 = sigma(1)*alfa**2/delta
-    END
     
-    
-    !Нахождение переменной P
     FUNCTION MakeP(alfa, z)
     real*8 z
     complex*16 alfa, MakeP, P1, P2, sigma(2)
         sigma = makeSigma(alfa); 
-        P1 = MakeP1(alfa); 
-        P2 = MakeP2(alfa); 
+        P1 = MakePn(alfa, 1); 
+        P2 = MakePn(alfa, 2); 
         MakeP = P1*exp(sigma(1)*z) + P2*exp(sigma(2)*z)
     END
     
     
-    !Нахождение переменной R
     FUNCTION MakeR(alfa, z)
     real*8 z
     complex*16 alfa, MakeR, R1, R2, sigma(2)
         sigma = makeSigma(alfa); 
-        R1 = MakeR1(alfa); 
-        R2 = MakeR2(alfa);
+        R1 = MakeRn(alfa, 1); 
+        R2 = MakeRn(alfa, 2);
         MakeR = R1*exp(sigma(1)*z) + R2*exp(sigma(2)*z)
     END
     

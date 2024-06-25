@@ -5,7 +5,7 @@ close all;
 
 % 1)real(u), 2)imag(u), 3)real(v), 4)imag(v), 5)real(w), 6)imag(w)
 fieldNum = 6;
-polar_couple = [1 2];
+polar_couple = [5 6];
 
 data = load("u_comsol.txt");
 data = data(1:4:end, :);
@@ -60,7 +60,7 @@ ylabel('$|u|$, mm', 'Interpreter', 'LaTeX');
 grid on
 
 f_pol = figure();
-plot(alf_fortran, u_forftran_p, alf_Sphase, u_Sphase, '-');
+polarplot(alf_fortran, u_forftran_p, alf_Sphase, u_Sphase, '--');
 legend('интеграл','стац. фаза')
 thetalim([180 360]);
 % rlim([0 3e-5])

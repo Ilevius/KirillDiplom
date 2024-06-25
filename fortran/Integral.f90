@@ -15,6 +15,7 @@ contains
         sigma = makeSigma(alfa)
         do i=1, n
             P = MakeP(alfa, z(i))
+            P = MakePn(alfa, 1)*exp(sigma(1)*z(i))
             cylinderR = sqrt(x(i)**2+y(i)**2)
             call S17DEF(1d0,alfa*cylinderR,1,'U',Bessel,ibess,jbess)
             s(i) = alfa**2*P*Bessel(1)*cos(phi(i))
@@ -49,6 +50,7 @@ contains
         sigma = makeSigma(alfa)
         do i=1, n
             RR = MakeR(alfa, z(i))
+            RR = MakeRn(alfa, 1)*exp(sigma(1)*z(i))
             cylinderR = sqrt(x(i)**2+y(i)**2)
             call S17DEF(0d0,alfa*cylinderR,1,'U',Bessel,ibess,jbess)
             s(i) = -RR*Bessel(1)*alfa
@@ -65,7 +67,7 @@ contains
         open(3, file="C:\Users\tiama\OneDrive\Рабочий стол\IMMI\!! Кирилл диплом 2024\data\u_integral.txt")
         write(3,'(A)') "% x, y, z, R, phi, psi, real(u), imag(u), real(v), imag(v), real(w), imag(w)"
         do i = 1, pointsNumber
-            write(3, '(12(2E15.6E3))') , x(i), y(i), z(i), R(i), phi(i), psi(i), real(u(i)), imag(u(i)), real(v(i)), imag(v(i)), real(w(i)), imag(w(i))
+            write(3, '(19(2E15.6E3))') , x(i), y(i), z(i), R(i), phi(i), psi(i), real(u(i)), imag(u(i)), real(v(i)), imag(v(i)), real(w(i)), imag(w(i))
         enddo
     end subroutine PlotIntegral
     

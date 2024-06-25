@@ -31,4 +31,23 @@ contains
         pole = dz(1)
     end subroutine findPole
     
-end module test 
+    end module test 
+    
+    
+    subroutine testFreq(psi, phi, alfa1, alfa2, alfa, i)
+    integer i
+    real*8 psi, phi
+    complex*16 alfa1, alfa2, alfa
+
+    teta(i)=-(sqrt(kappa(1)**2-alfa**2)*cos(psi)+(alfa1*cos(phi)+alfa2*sin(phi))*sin(psi))
+        
+    end subroutine testFreq 
+    !
+    !call findPole(pole)
+    !    do i = 1, pointsNumber
+    !        call testFreq(psi(i), phi(i), alfa1, alfa2, alfa, i)
+    !enddo
+    !
+    !do i = 1, pointsNumber
+    !    write(4, '(1(2E15.6E3))') , teta(i)
+    !enddo
